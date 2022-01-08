@@ -5,6 +5,9 @@
   "repository": "https://github.com/juliandamass/enamdua.git",
   "author": "Julian Damas Suryawan <juliandamass@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "sass --watch assets/scss/main.scss:assets/css/main.min.css --style compressed"
+  },
   "dependencies": {
     "bootstrap": "^5.1.3"
   }
