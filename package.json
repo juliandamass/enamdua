@@ -1,0 +1,8 @@
+{
+  "name": "enamdua",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/juliandamass/enamdua.git",
+  "author": "Julian Damas Suryawan <juliandamass@gmail.com>",
+  "license": "MIT"
+}
