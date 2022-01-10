@@ -110,14 +110,27 @@ body {
 
 .main-nav {
   position: fixed;
-  left: -540px;
+  left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 700px;
+  width: 100vw;
   height: 100vh;
+  max-height: 90px;
   background-color: $ed-red-1;
-  transition: left 0.7s ease-in-out, filter 0.7s ease-in-out;
+  transition-property: left, filter, max-height;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
   z-index: 1000;
+  overflow: hidden;
+
+  @include media-breakpoint-up(lg) {
+    left: -540px;
+    flex-direction: row;
+    width: 700px;
+    height: 100vh;
+    max-height: initial;
+  }
 
   @include media-breakpoint-up(xxxl) {
     left: -800px;
@@ -125,12 +138,16 @@ body {
   }
 
   .main-nav-link {
-    font-size: 64px;
+    font-size: 42px;
     font-weight: 700;
     line-height: 1;
     color: $ed-white;
     white-space: nowrap;
     text-decoration: none;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 64px;
+    }
 
     @include media-breakpoint-up(xxxl) {
       font-size: 92px;
@@ -138,13 +155,22 @@ body {
   }
 
   .main-nav-left {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    padding-top: 75px;
-    padding-right: 250px;
-    padding-left: 70px;
-    padding: 60px 60px 50px;
+    width: 100vw;
     height: 100%;
+    padding: 120px 30px 30px;
+    background-color: $ed-red-1;
+    z-index: 10;
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      padding: 60px 60px 50px;
+      margin-top: 0;
+    }
 
     @include media-breakpoint-up(xxxl) {
       padding: 120px 120px 100px;
@@ -160,10 +186,17 @@ body {
 
       .main-nav-menu {
         position: relative;
-        left: -45vw;
-        transition-property: left;
+        top: -50vh;
+        left: 0;
+        transition-property: top, margin-top;
         transition-duration: 0.7s;
         transition-timing-function: ease-in-out;
+
+        @include media-breakpoint-up(lg) {
+          transition-property: left, margin-top;
+          top: 0;
+          left: -45vw;
+        }
 
         & + .main-nav-menu {
           margin-top: 34px;
@@ -175,11 +208,17 @@ body {
           }
 
           &:nth-last-child(2) {
-            margin-top: auto;
+            @include media-breakpoint-up(lg) {
+              margin-top: auto;
+            }
           }
 
           .main-nav-link {
-            font-size: 42px;
+            font-size: 28px;
+
+            @include media-breakpoint-up(lg) {
+              font-size: 42px;
+            }
 
             @include media-breakpoint-up(xxxl) {
               font-size: 60px;
@@ -192,50 +231,75 @@ body {
 
   .main-nav-right {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 30px 50px;
-    height: 100%;
+    width: 100%;
+    padding: 10px 30px 10px;
+    background-color: $ed-red-1;
+    z-index: 20;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: column;
+      width: auto;
+      height: 100%;
+      padding: 30px 30px 50px;
+    }
 
     @include media-breakpoint-up(xxxl) {
       padding: 45px 50px 100px;
     }
 
-    .main-nav-icons {
-      padding: 0;
-      margin: 0;
-      list-style: none;
+    .main-nav-logo {
+      height: 70px;
 
-      .main-nav-icon {
-        position: relative;
-        left: -45vw;
-        transition-property: left;
-        transition-duration: 0.7s;
-        transition-timing-function: ease-in-out;
+      @include media-breakpoint-up(lg) {
+        height: auto;
+      }
+    }
+  }
 
-        &.main {
-          left: 0;
+  .main-nav-icons {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 
-          .main-collapse {
-            display: none;
-          }
+    .main-nav-icon {
+      position: relative;
+      left: -45vw;
+      display: none;
+      transition-property: left;
+      transition-duration: 0.7s;
+      transition-timing-function: ease-in-out;
+
+      @include media-breakpoint-up(lg) {
+        display: block;
+      }
+
+      &.main {
+        left: 0;
+        display: block;
+
+        .main-collapse {
+          display: none;
         }
+      }
 
-        &:first-child {
+      &:first-child {
+        @include media-breakpoint-up(lg) {
           margin-bottom: 30px;
-
-          @include media-breakpoint-up(xxxl) {
-            margin-bottom: 54px;
-          }
         }
 
-        & + .main-nav-icon {
-          margin-top: 12px;
+        @include media-breakpoint-up(xxxl) {
+          margin-bottom: 54px;
+        }
+      }
 
-          @include media-breakpoint-up(xxxl) {
-            margin-top: 24px;
-          }
+      & + .main-nav-icon {
+        margin-top: 12px;
+
+        @include media-breakpoint-up(xxxl) {
+          margin-top: 24px;
         }
       }
     }
@@ -243,10 +307,12 @@ body {
 
   &.expanded {
     left: 0;
+    max-height: 1500px;
     filter: drop-shadow(20px 0px 40px rgba(0, 0, 0, 0.25));
 
     .main-nav-left .main-nav-menus .main-nav-menu,
     .main-nav-right .main-nav-icons .main-nav-icon {
+      top: 0;
       left: 0;
     }
 
