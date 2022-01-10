@@ -56,6 +56,16 @@ $gutters: (
   '110px': 110px,
 );
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1536px,
+);
+
 /* end bootstrap variables custom */
 
 /* bootstrap */
@@ -83,31 +93,48 @@ body {
 /* main */
 
 .main-container {
-  padding-left: 200px;
+  padding-left: 160px;
+
+  @include media-breakpoint-up(xxxl) {
+    padding-left: 200px;
+  }
 }
 
 .content-container {
-  padding: 0 86px;
+  padding: 0 42px;
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 0 86px;
+  }
 }
 
 .main-nav {
   position: fixed;
-  left: -800px;
+  left: -540px;
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  width: 700px;
   height: 100vh;
   background-color: $ed-red-1;
   transition: left 0.7s ease-in-out, filter 0.7s ease-in-out;
   z-index: 1000;
 
+  @include media-breakpoint-up(xxxl) {
+    left: -800px;
+    width: 1000px;
+  }
+
   .main-nav-link {
-    font-size: 92px;
+    font-size: 64px;
     font-weight: 700;
     line-height: 1;
     color: $ed-white;
     white-space: nowrap;
     text-decoration: none;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 92px;
+    }
   }
 
   .main-nav-left {
@@ -116,8 +143,12 @@ body {
     padding-top: 75px;
     padding-right: 250px;
     padding-left: 70px;
-    padding: 120px 120px 100px;
+    padding: 60px 60px 50px;
     height: 100%;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 120px 120px 100px;
+    }
 
     .main-nav-menus {
       display: flex;
@@ -148,7 +179,11 @@ body {
           }
 
           .main-nav-link {
-            font-size: 60px;
+            font-size: 42px;
+
+            @include media-breakpoint-up(xxxl) {
+              font-size: 60px;
+            }
           }
         }
       }
@@ -160,8 +195,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 45px 50px 100px;
+    padding: 30px 30px 50px;
     height: 100%;
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 45px 50px 100px;
+    }
 
     .main-nav-icons {
       padding: 0;
@@ -184,11 +223,19 @@ body {
         }
 
         &:first-child {
-          margin-bottom: 54px;
+          margin-bottom: 30px;
+
+          @include media-breakpoint-up(xxxl) {
+            margin-bottom: 54px;
+          }
         }
 
         & + .main-nav-icon {
-          margin-top: 24px;
+          margin-top: 12px;
+
+          @include media-breakpoint-up(xxxl) {
+            margin-top: 24px;
+          }
         }
       }
     }
@@ -224,22 +271,35 @@ body {
 }
 
 .hero {
-  padding: 72px 0 90px;
+  padding: 48px 0 72px;
   background-color: $ed-red-1;
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 72px 0 90px;
+  }
 
   .hero-title {
     margin-bottom: 0;
-    font-size: 70px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 1;
     color: $ed-white;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 70px;
+    }
   }
 
   .hero-logo {
-    width: auto;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
     height: auto;
-    margin-bottom: 80px;
+    margin-bottom: 56px;
+
+    @include media-breakpoint-up(xxxl) {
+      max-width: 812px;
+      margin-bottom: 80px;
+    }
   }
 
   .hero-video-container {
@@ -249,10 +309,15 @@ body {
 
   .hero-video {
     width: 1620px;
-    height: 302px;
+    height: 280px;
     margin-left: auto;
-    margin-bottom: 77px;
+    margin-bottom: 36px;
     object-fit: cover;
+
+    @include media-breakpoint-up(xxxl) {
+      height: 302px;
+      margin-bottom: 78px;
+    }
   }
 
   .hero-text {
@@ -293,21 +358,33 @@ body {
 
   .detail-title {
     margin: 0;
-    font-size: 92px;
+    font-size: 64px;
     font-weight: 700;
     line-height: normal;
     color: $ed-red-1;
+
+    @include media-breakpoint-up(xxxl) {
+      font: 92px;
+    }
   }
 
   .detail-content {
-    margin-top: 6%;
+    margin-top: 3%;
+
+    @include media-breakpoint-up(xxxl) {
+      margin-top: 6%;
+    }
 
     .detail-content-title {
       margin-bottom: 12px;
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 700;
       line-height: normal;
       color: $ed-red-1;
+
+      @include media-breakpoint-up(xxxl) {
+        font-size: 48px;
+      }
     }
 
     .detail-content-text {
@@ -327,18 +404,27 @@ body {
     }
 
     .detail-content-box {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       border-radius: 12px;
       border: 2px solid $ed-red-1;
       background-color: transparent;
+
+      @include media-breakpoint-up(xxxl) {
+        width: 100px;
+        height: 100px;
+      }
     }
   }
 }
 
 .description {
-  padding: 195px 0 202px;
+  padding: 100px 0;
   background-color: $ed-brown-1;
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 195px 0 202px;
+  }
 
   .description-title {
     margin-bottom: 8px;
@@ -372,10 +458,14 @@ body {
 
   .partner-title {
     margin-bottom: 40px;
-    font-size: 92px;
+    font-size: 64px;
     font-weight: 700;
     line-height: 1;
     color: $ed-white;
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 92px;
+    }
   }
 
   .partner-detail {
