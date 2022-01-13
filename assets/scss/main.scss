@@ -146,6 +146,7 @@ body {
 }
 
 .content-container {
+  width: 100%;
   padding: 0 30px;
 
   @include media-breakpoint-up(lg) {
@@ -500,6 +501,57 @@ body {
       @include media-breakpoint-up(lg) {
         max-width: 80%;
         font-size: 48px;
+      }
+    }
+  }
+
+  &.hero-career {
+    min-height: unset;
+    padding: 30px 0 80px;
+
+    @include media-breakpoint-up(lg) {
+      padding: 40px 0 100px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      padding: 60px 0 174px;
+    }
+
+    .hero-title {
+      margin-bottom: 36px;
+      font-size: 88px;
+      font-weight: 700;
+      line-height: 1;
+      color: $ed-white-1;
+      -webkit-text-fill-color: $ed-red-1;
+      -webkit-text-stroke-width: 1.5px;
+      -webkit-text-stroke-color: $ed-white-1;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 68px;
+        font-size: 140px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        font-size: 200px;
+      }
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1;
+      color: $ed-white-1;
+
+      @include media-breakpoint-up(lg) {
+        padding-left: 3%;
+        font-size: 120px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        font-size: 160px;
+        line-height: 175px;
       }
     }
   }
@@ -1118,6 +1170,66 @@ body {
       @include media-breakpoint-up(xxxl) {
         font-size: 48px;
       }
+    }
+  }
+}
+
+.career {
+  padding: 30px 0 80px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 60px 0 120px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    padding: 100px 0 228px;
+  }
+
+  .career-title {
+    margin-bottom: 30px;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: normal;
+    color: $ed-red-1;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 40px;
+      font-size: 74px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      font-size: 92px;
+      line-height: 110px;
+    }
+  }
+
+  .career-subtitle {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: normal;
+    color: $ed-red-1;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 36px;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+      margin-bottom: 60px;
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  .career-content {
+    max-width: 874px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+    color: $ed-brown-1;
+
+    @include media-breakpoint-up(lg) {
+      padding-left: 5%;
     }
   }
 }
