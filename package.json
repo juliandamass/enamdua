@@ -9,6 +9,7 @@
     "dev": "sass --watch assets/scss/main.scss:assets/css/main.min.css --style compressed"
   },
   "dependencies": {
+    "@splidejs/splide": "^3.6.9",
     "bootstrap": "^5.1.3"
   }
 }
