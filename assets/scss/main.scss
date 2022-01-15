@@ -195,6 +195,11 @@ body {
     color: $ed-white;
     white-space: nowrap;
     text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $ed-brown-1;
+    }
 
     @include media-breakpoint-up(lg) {
       font-size: 64px;
@@ -395,7 +400,9 @@ body {
   @include media-breakpoint-up(lg) {
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 970px;
     padding: 48px 0 72px;
   }
 
@@ -471,6 +478,10 @@ body {
       font-size: 48px;
       line-height: 1;
       color: $ed-red-1;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 30px;
+      }
 
       @include media-breakpoint-up(lg) {
         margin-bottom: 30px;
@@ -767,11 +778,13 @@ body {
   .partner-detail {
     margin-bottom: 40px;
     font-weight: 700;
+    color: $ed-white-1;
   }
 
   .partner-text {
     margin: 0;
     line-height: 34px;
+    color: $ed-white-1;
   }
 }
 
@@ -1239,7 +1252,12 @@ body {
   background-color: $ed-brown-1;
 
   @include media-breakpoint-up(lg) {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 760px;
+  }
+
+  @include media-breakpoint-up(xxxl) {
+    min-height: 970px;
   }
 
   .industry-fixed {
@@ -1279,17 +1297,21 @@ body {
     height: auto;
 
     @include media-breakpoint-up(lg) {
-      height: calc(100vh - 120px);
+      height: calc(100% - 120px);
     }
 
     @include media-breakpoint-up(xxxl) {
-      height: calc(100vh - 172px);
+      height: calc(100% - 172px);
     }
 
     .splide {
       height: 100%;
 
       .splide__track {
+        height: 100%;
+      }
+
+      .row > div {
         height: 100%;
       }
     }
