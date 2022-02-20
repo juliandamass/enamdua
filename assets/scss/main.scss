@@ -601,7 +601,7 @@ body {
 
   .about-text {
     margin-bottom: 12px;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 34px;
     color: $ed-white;
@@ -753,7 +753,7 @@ body {
 
   .description-text {
     margin: 0;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 34px;
     color: $ed-white;
@@ -769,43 +769,43 @@ body {
 
   .detail-title {
     margin-bottom: 30px;
-    font-size: 64px;
+    font-size: 50px;
     font-weight: 700;
     line-height: normal;
-    color: $ed-red-1;
+    color: $ed-brown;
 
     @include media-breakpoint-up(lg) {
       margin-bottom: 0;
     }
 
     @include media-breakpoint-up(xxxl) {
-      font-size: 92px;
+      font-size: 90px;
     }
   }
-  
-  // .description-list {
-  //   margin: 0;
-  //   padding: 0;
-  //   list-style: none;
-  //   column-count: 2;
 
-  //   .description-list-menu {
-  //     margin: 0;
-  //     padding: 0;
-  //     color: $ed-brown;
-  //     font-size: 80px;
-  //     font-weight: bold;
-  //     line-height: normal;
-  //   }
+  .description-list {
+    padding: 0;
+    margin: 0;
+    margin-top: 30px;
+    list-style: none;
 
-  //   @include media-breakpoint-up(lg) {
-  //     font-size: 32px;
-  //   }
+    .description-list-menu {
+      padding: 0;
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+      line-height: normal;
+      color: $ed-brown;
 
-  //   @include media-breakpoint-up(xxxl) {
-  //     font-size: 48px;
-  //   }
-  // }
+      @include media-breakpoint-up(lg) {
+        font-size: 50px;
+      }
+
+      @include media-breakpoint-up(xxxl) {
+        font-size: 48px;
+      }
+    }
+  }
 }
 
 .partner {
@@ -895,6 +895,7 @@ body {
 
   .partner-text {
     margin: 0;
+    font-size: 24px;
     line-height: 34px;
     color: $ed-white-1;
   }
@@ -1176,6 +1177,18 @@ body {
 
     @include media-breakpoint-up(xxxl) {
       font-size: 24px;
+    }
+  }
+
+  .why-textt {
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: normal;
+    line-height: 35px;
+    color: $ed-red-1;
+
+    @include media-breakpoint-up(xxxl) {
+      fontsize: 44px;
     }
   }
 
