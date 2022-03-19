@@ -784,20 +784,18 @@ body {
   }
 
   .description-list {
-    display: flex;
     text-align: justify;
-    padding: 10px;
-    margin: 5px;
+    padding: 0;
+    margin: 0;
     margin-right: 7px;
     margin-top: 30px;
     list-style: none;
     line-height: 36px;
 
     .description-list-menu {
-      display: flex;
-      text-align: justify;
-      padding: 5px;
-      margin-right: 8px;
+      display: inline;
+      margin: 0;
+      padding: 0;
       font-size: 26px;
       font-weight: bold;
       line-height: 46px;
@@ -815,7 +813,6 @@ body {
 
     .description-list-menu:hover {
       color: $ed-red-1;
-      text-decoration: underline solid $ed-red-1;
       cursor: pointer;
     }
   }
