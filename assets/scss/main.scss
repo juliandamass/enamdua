@@ -784,26 +784,39 @@ body {
   }
 
   .description-list {
-    padding: 0;
-    margin: 0;
+    display: flex;
+    text-align: justify;
+    padding: 10px;
+    margin: 5px;
+    margin-right: 7px;
     margin-top: 30px;
     list-style: none;
+    line-height: 36px;
 
     .description-list-menu {
-      padding: 0;
-      margin: 0;
+      display: flex;
+      text-align: justify;
+      padding: 5px;
+      margin-right: 8px;
       font-size: 26px;
       font-weight: bold;
-      line-height: normal;
+      line-height: 46px;
       color: $ed-brown;
 
       @include media-breakpoint-up(lg) {
         font-size: 50px;
+        line-height: 49px;
       }
 
       @include media-breakpoint-up(xxxl) {
         font-size: 48px;
       }
+    }
+
+    .description-list-menu:hover {
+      color: $ed-red-1;
+      text-decoration: underline solid $ed-red-1;
+      cursor: pointer;
     }
   }
 }
@@ -1829,6 +1842,7 @@ body {
   .file {
     position: relative;
     padding: 80px 30px 40px;
+    margin: 10px;
     border: 2px solid $ed-red-1;
     background-color: $ed-black;
     background-size: cover;
