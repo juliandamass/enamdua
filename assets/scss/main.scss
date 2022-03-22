@@ -787,7 +787,7 @@ body {
     }
   }
 
-  .description-list {
+  .description-tab {
     text-align: justify;
     padding: 0;
     margin: 0;
@@ -795,6 +795,19 @@ body {
     margin-top: 20%;
     list-style: none;
     line-height: 1;
+    border-bottom: none;
+  }
+
+  .description-list {
+    text-align: justify;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    margin-right: 7px;
+    margin-top: 20%;
+    list-style: none;
+    line-height: 1;
+    border-bottom: none;
 
     .description-list-menu {
       display: inline;
