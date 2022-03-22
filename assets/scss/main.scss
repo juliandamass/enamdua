@@ -937,6 +937,7 @@ body {
       }
 
       .partner-tab-cover-img {
+        margin-left: -9px;
         width: 90%;
 
         @include media-breakpoint-up(lg) {
